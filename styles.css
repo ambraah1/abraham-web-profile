@@ -1,0 +1,127 @@
+/* Estilos generales */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    color: #333;
+    padding: 20px;
+    line-height: 1.5;  /* Añade espacio entre las líneas para mejorar la legibilidad */
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Estilos del encabezado */
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    margin-bottom: 20px;
+    border-radius: 5px;  /* Añade bordes redondeados */
+}
+
+/* Estilos del contenido principal */
+main {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    overflow: hidden;  /* Previene que los hijos con float se desborden */
+}
+
+/* Estilos de las secciones */
+section:not(:last-child) {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #ccc;
+}
+
+/* Estilos de las listas */
+ul {
+    list-style: disc inside;  /* Coloca los bullets dentro del contenedor, lo que puede ayudar con el espaciado */
+}
+
+/* Estilos del formulario de contacto */
+#contact-form input[type="submit"],
+#contact-form button {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;  /* Añade transición para un cambio suave de color */
+}
+
+#contact-form input[type="submit"]:hover,
+#contact-form button:hover {
+    background-color: #555;
+}
+
+/* Estilos del pie de página */
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    font-size: 14px;
+    margin-top: 20px;
+    border-radius: 5px;  /* Añade bordes redondeados */
+}
+
+/* Estilos de los enlaces de redes sociales */
+.social-links li {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.social-links li a {
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;  /* Añade transición para un cambio suave de color */
+}
+
+.social-links li a:hover {
+    background-color: #eee;
+}
+
+/* Estilos adicionales para dispositivos móviles */
+@media screen and (max-width: 600px) {
+    body {
+        padding: 10px;  /* Reduce el padding en móviles para un mejor uso del espacio */
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    ul {
+        font-size: 14px;
+    }
+
+    footer {
+        font-size: 12px;
+    }
+}
+
+.hidden {
+    display: none;
+  }
+  

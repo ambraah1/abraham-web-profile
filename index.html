@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Página Personal de Abraham</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <header>
+    <h1 id="header-title"></h1>
+    <p id="header-description"></p>  
+</header>
+  <main>
+    <section>
+      <h2>Acerca de mí</h2>
+      <p id="about-me"></p>
+    </section>
+    <section>
+      <h2>Experiencia y Educación</h2>
+      <ul id="experience-education">
+        <li>Experiencia autodidacta en programación y desarrollo web</li>
+        <li>Grado en Ciencias de la Computación, Universidad XYZ</li>
+        <li>Certificación en Desarrollo Full-Stack, Bootcamp ABC</li>
+      </ul>
+    </section>
+    <section>
+      <h2>Proyectos Destacados</h2>
+      <ul id="projects">
+        <!-- Los proyectos se generarán dinámicamente aquí -->
+      </ul>
+    </section>
+
+    <section>
+        <h2>Habilidades y Competencias</h2>
+        <ul id="skills-competencies">
+          <li>
+            <strong>Programación:</strong>
+            <ul id="programming-skills-list">
+              <!-- Las habilidades de programación se agregarán dinámicamente con JavaScript -->
+            </ul>
+          </li>
+          <li>
+            <strong>Escritura:</strong>
+            <ul>
+              <li>Creativa y técnica</li>
+              <li>
+                Constantemente estoy desarrollando y mejorando mis habilidades de escritura. Almaceno en mi computadora varios tipos de escritura, incluyendo relatos sobre mi vida personal, que estarán disponibles en esta página en un futuro próximo. Manténganse al tanto para más actualizaciones.
+              </li>
+            </ul>
+          </li>
+          <li><strong>Ventas y negociación:</strong> Experiencia en la negociación y cierre de acuerdos comerciales exitosos</li>
+          <li><strong>Investigación y análisis de datos:</strong> Capacidad para recopilar, analizar y presentar datos de manera efectiva</li>
+          <li><strong>Gustos personales:</strong>
+            <ul>
+              <li>Caminata</li>
+              <li>Trote</li>
+              <li>Ejercicios de baja intensidad</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+      
+    <section>
+      <h2>Gustos Personales</h2>
+      <ul id="personal-likes">
+        <li>Música:
+          <ul>
+            <li>Radiohead - Creep</li>
+            <li>The Reason - Hoobastank</li>
+            <li>Foo Fighters - Everlong</li>
+          </ul>
+        </li>
+        <li>Deportes:
+          <ul>
+            <li>Fútbol</li>
+            <li>Baloncesto</li>
+            <li>Caminata</li>
+            <li>Trote</li>
+            <li>Ejercicios de baja intensidad</li>
+            <li>Yoga</li>
+          </ul>
+        </li>
+        <li>Lectura: Me considero un ávido lector y disfruto explorar diferentes géneros literarios, desde novelas de ciencia ficción hasta libros de filosofía.</li>
+      </ul>
+    </section>
+    <section>
+      <h2>Información de Contacto</h2>
+      <ul class="contact-info" id="contact-info">
+        <!-- La información de contacto se generará dinámicamente aquí -->
+      </ul>
+    </section>
+    <section>
+      <h2>Formulario de Contacto</h2>
+      <form id="contact-form">
+        <div>
+          <label for="name">Nombre:</label>
+          <input type="text" id="name" name="name" required>
+          <small class="error-text"></small>
+        </div>
+        <div>
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required>
+          <small class="error-text"></small>
+        </div>
+        <div>
+          <label for="message">Mensaje:</label>
+          <textarea id="message" name="message" rows="4" required></textarea>
+          <small class="error-text"></small>
+        </div>
+        <button type="submit">Enviar Mensaje</button>
+      </form>
+    </section>
+    <section>
+      <h2>Blog</h2>
+      <div id="blog-posts">
+        <!-- Los artículos del blog se agregarán dinámicamente con JavaScript -->
+      </div>
+    </section>
+  </main>
+  <footer>
+    <p>¡Gracias por visitar mi página personal!</p>
+    <p>No dudes en contactarme si tienes alguna pregunta o deseas colaborar en algún proyecto. Estaré encantado de escuchar tus ideas y trabajar juntos.</p>
+    <p>&copy; 2023 Abraham. Todos los derechos reservados.</p>
+  </footer>
+  <script src="main.js"></script>
+</body>
+
+</html>
