@@ -124,4 +124,22 @@ footer {
 .hidden {
     display: none;
   }
-  
+  /* Estilos de los enlaces de redes sociales en el footer */
+.social-media-links {
+    margin-top: 20px;
+}
+
+.social-media-links a {
+    display: inline-block; /* Alinea los íconos en una línea */
+    margin-right: 10px; /* Agrega un margen a la derecha para separar los íconos */
+    text-decoration: none; /* Remueve cualquier subrayado del enlace */
+}
+
+.social-media-links img {
+    width: 24px; /* Cambia el tamaño del ícono. Asegúrate de usar un tamaño que funcione para ti. */
+    height: 24px; /* Cambia el tamaño del ícono. Asegúrate de usar un tamaño que funcione para ti. */
+}
+
+.social-media-links a:hover img {
+    opacity: 0.7; /* Cambia la opacidad de los íconos cuando se pasa el cursor sobre ellos */
+}
