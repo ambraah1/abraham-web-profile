@@ -245,11 +245,11 @@ function validateEmail(email) {
 function initFooter() {
     // Aquí es donde puedes cambiar los enlaces a las redes sociales.
     document.getElementById('facebook-link').href = "https://www.facebook.com/ambraah1";
-    document.getElementById('instagram-link').href = "https://www.facebook.com/nuevoNombreDeUsuario";
+    document.getElementById('instagram-link').href = "https://www.instagram.com/ambraah1";
     document.getElementById('youtube-link').href = "https://www.youtube.com/@ambraah1.";
     document.getElementById('linkedin-link').href = "https://www.facebook.com/nuevoNombreDeUsuario";
     document.getElementById('github-link').href = "https://github.com/ambraah1";
-    document.getElementById('twitter-link').href = "https://www.facebook.com/nuevoNombreDeUsuario";
+    document.getElementById('twitter-link').href = "https://twitter.com/ambraah1";
     document.getElementById('stackoverflow-link').href = "https://es.stackoverflow.com/users/323294/abraham-avenda%c3%b1o-v%c3%a9liz";
 
     // document.getElementById('whatsapp-link').href = "https://wa.me/nuevoNumeroDeTelefono";
