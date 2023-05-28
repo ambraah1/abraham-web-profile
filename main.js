@@ -8,6 +8,9 @@ document.addEventListener('DOMContentLoaded', () => {
     initContactForm();
     initFooter(); // Añade la llamada a la función aquí.
     initMusicLinks(); // Añade la llamada a la función aquí.
+    initExperienceEducation(); // Nueva llamada a función
+    initWritingSkills(); // Añade la llamada a la función aquí.
+    initSportsList();
 });
 
 function initHeader() {
@@ -23,43 +26,16 @@ function initAboutMe() {
     aboutMe.textContent = 'Soy Abraham, un apasionado de la tecnología y la creatividad. Me especializo en programación y disfruto tanto de escribir ficción como de explorar temas de no ficción. Mi curiosidad me ha llevado a investigar la metafísica, el funcionamiento del cerebro y la nutrición. Además, como deportista entusiasta, busco mantener un estilo de vida activo y saludable para potenciar mi bienestar integral.';
 }
 
-function initSkills() {
-    const programmingSkills = [
-        'Desarrollo web front-end',
-        'Desarrollo web back-end',
-        'Programación orientada a objetos',
-        'Base de datos y SQL',
-        'Desarrollo de aplicaciones móviles',
-        'Desarrollo de aplicaciones de escritorio',
-        'Control de versiones con Git',
-        'Pruebas y depuración de código',
-        'Seguridad informática',
-        'Despliegue y gestión de servidores',
-        'Análisis y diseño de algoritmos',
-        'Manejo de APIs y servicios web',
-        'Automatización de tareas',
-        'Optimización de rendimiento',
-        'Experiencia en frameworks y bibliotecas populares (por ejemplo, React, Angular, Django, Laravel)',
-        'Desarrollo de aplicaciones móviles nativas (iOS, Android)',
-        'Desarrollo de aplicaciones híbridas (React Native, Flutter)',
-        'Arquitectura de software',
-        'Pruebas unitarias y de integración',
-        'Desarrollo de APIs RESTful',
-        'Integración de sistemas y servicios',
-        'Desarrollo de juegos',
-        'Machine Learning y Data Science',
-        'Cloud Computing (AWS, Azure, Google Cloud)',
-        'Automatización de tareas con scripting (Bash, PowerShell)',
-        'Virtualización y contenedores (Docker, Kubernetes)',
-        'Seguridad en aplicaciones web',
-        'Optimización de rendimiento web',
-        'Desarrollo de extensiones y plugins',
-        'Experiencia en frameworks y bibliotecas adicionales (Vue.js, Ruby on Rails, Spring, Express.js)'
-    ];
+async function initSkills() {
+    // Cargar los datos
+    const response = await fetch('data.json');
+    const data = await response.json();
+
     const programmingSkillsList = document.getElementById('programming-skills-list');
     const toggleSkillsButton = createToggleButton(programmingSkillsList);
 
-    programmingSkills.forEach(skill => {
+    // Llenar la lista de habilidades
+    data.programmingSkills.forEach(skill => {
         const skillItem = document.createElement('li');
         skillItem.textContent = skill;
         programmingSkillsList.appendChild(skillItem);
@@ -68,6 +44,7 @@ function initSkills() {
     programmingSkillsList.classList.add('hidden');
     programmingSkillsList.parentNode.insertBefore(toggleSkillsButton, programmingSkillsList);
 }
+
 
 function createToggleButton(elementToToggle) {
     const toggleButton = document.createElement('button');
@@ -83,10 +60,10 @@ function createToggleButton(elementToToggle) {
 function initProjects() {
     const projects = [
         {
-            title: 'Proyecto 1',
-            description: 'Descripción breve del proyecto 1.',
-            image: 'project.png',
-            link: '#'
+            title: 'True Wireless Earbuds',
+            description: '¡Bienvenidos al emocionante mundo de los audífonos inalámbricos! Aquí encontrarás el mejor proyecto de ventas, ofreciendo lo último en tecnología y calidad de sonido. ¡Sumérgete en la libertad de la música sin cables con nosotros!',
+            image: 'project1.png',
+            link: 'https://truewirelessearbuds.netlify.app/'
         },
         {
             title: 'Proyecto 2',
@@ -243,22 +220,21 @@ function validateEmail(email) {
     return true;
 }
 
-function initFooter() {
-    // Aquí es donde puedes cambiar los enlaces a las redes sociales.
-    document.getElementById('facebook-link').href = "https://www.facebook.com/ambraah1";
-    document.getElementById('instagram-link').href = "https://www.instagram.com/ambraah1";
-    document.getElementById('youtube-link').href = "https://www.youtube.com/@ambraah1.";
-    document.getElementById('linkedin-link').href = "https://www.facebook.com/nuevoNombreDeUsuario";
-    document.getElementById('github-link').href = "https://github.com/ambraah1";
-    document.getElementById('twitter-link').href = "https://twitter.com/ambraah1";
-    document.getElementById('stackoverflow-link').href = "https://es.stackoverflow.com/users/323294/abraham-avenda%c3%b1o-v%c3%a9liz";
+async function initFooter() {
+    // Cargar los datos
+    const response = await fetch('data.json');
+    const data = await response.json();
 
-    // document.getElementById('whatsapp-link').href = "https://wa.me/nuevoNumeroDeTelefono";
+    // Llenar los enlaces a las redes sociales
+    for (const [network, url] of Object.entries(data.socialLinks)) {
+        document.getElementById(`${network}-link`).href = url;
+    }
 
-    // Aquí es donde puedes cambiar el contenido de derechos de autor.
+    // Llenar el contenido de derechos de autor
     const currentYear = new Date().getFullYear();
-    document.getElementById('copyright').textContent = `© ${currentYear} Abraham. Todos los derechos reservados.`;
+    document.getElementById('copyright').textContent = `© ${currentYear} ${data.copyright}`;
 }
+
 function initMusicLinks() {
     document.querySelector('#song1 a').href = 'https://www.youtube.com/watch?v=XFkzRNyygfk'; // URL de la canción 'Radiohead - Creep'
     document.querySelector('#song2 a').href = 'https://www.youtube.com/watch?v=fV4DiAyExN0'; // URL de la canción 'The Reason - Hoobastank'
@@ -266,4 +242,59 @@ function initMusicLinks() {
     document.querySelector('#song4 a').href = 'https://www.youtube.com/watch?v=r00ikilDxW4'; // URL de la canción '21 Guns - Green Day'
     document.querySelector('#song5 a').href = 'https://www.youtube.com/watch?v=4qlCC1GOwFw'; // URL de la canción 'One Step Closer - Linkin Park'
     document.querySelector('#song6 a').href = 'https://www.youtube.com/watch?v=rgNvZeZ0K6k'; // URL de la canción 'R. City - Locked Away ft. Adam Levine'
+}
+
+function initExperienceEducation() {
+    const experienceEducationList = document.getElementById('experience-education');
+
+    // Limpia cualquier contenido existente
+    while (experienceEducationList.firstChild) {
+        experienceEducationList.firstChild.remove();
+    }
+
+    // Nueva experiencia y educación para mostrar
+    const experienceEducation = [
+        'Experiencia autodidacta en programación y desarrollo web',
+        'Grado en Ciencias de la Computación, Universidad XYZ',
+        'Certificación en Desarrollo Full-Stack, Bootcamp ABC'
+    ];
+
+    // Crea y añade cada nueva experiencia/educación a la lista
+    experienceEducation.forEach(item => {
+        const listItem = document.createElement('li');
+        listItem.textContent = item;
+        experienceEducationList.appendChild(listItem);
+    });
+}
+
+function initWritingSkills() {
+    const writingSkills = [
+        'Creativa y técnica',
+        'Constantemente estoy desarrollando y mejorando mis habilidades de escritura. Almaceno en mi computadora varios tipos de escritura, incluyendo relatos sobre mi vida personal, que estarán disponibles en esta página en un futuro próximo. Manténganse al tanto para más actualizaciones.'
+    ];
+    const writingSkillsList = document.getElementById('writing-skills');
+
+    writingSkills.forEach(skill => {
+        const skillItem = document.createElement('li');
+        skillItem.textContent = skill;
+        writingSkillsList.appendChild(skillItem);
+    });
+}
+
+function initSportsList() {
+    const sports = [
+        'Fútbol',
+        'Baloncesto',
+        'Caminata',
+        'Trote',
+        'Ejercicios de baja intensidad',
+        'Yoga'
+    ];
+    const sportsList = document.getElementById('sports-list');
+
+    sports.forEach(sport => {
+        const sportItem = document.createElement('li');
+        sportItem.textContent = sport;
+        sportsList.appendChild(sportItem);
+    });
 }

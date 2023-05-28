@@ -1,0 +1,46 @@
+{
+    "socialLinks": {
+      "facebook": "https://www.facebook.com/ambraah1",
+      "instagram": "https://www.instagram.com/ambraah1",
+      "youtube": "https://www.youtube.com/@ambraah1",
+      "linkedin": "https://www.facebook.com/nuevoNombreDeUsuario",
+      "github": "https://github.com/ambraah1",
+      "twitter": "https://twitter.com/ambraah1",
+      "stackoverflow": "https://es.stackoverflow.com/users/323294/abraham-avenda%c3%b1o-v%c3%a9liz",
+      "whatsapp": "https://wa.me/+56977143420" 
+    },
+    "copyright": "Abraham. Todos los derechos reservados.",
+    "programmingSkills": [
+        "Desarrollo web front-end",
+        "Desarrollo web back-end",
+        "Programación orientada a objetos",
+        "Base de datos y SQL",
+        "Desarrollo de aplicaciones móviles",
+        "Desarrollo de aplicaciones de escritorio",
+        "Control de versiones con Git",
+        "Pruebas y depuración de código",
+        "Seguridad informática",
+        "Despliegue y gestión de servidores",
+        "Análisis y diseño de algoritmos",
+        "Manejo de APIs y servicios web",
+        "Automatización de tareas",
+        "Optimización de rendimiento",
+        "Experiencia en frameworks y bibliotecas populares (por ejemplo, React, Angular, Django, Laravel)",
+        "Desarrollo de aplicaciones móviles nativas (iOS, Android)",
+        "Desarrollo de aplicaciones híbridas (React Native, Flutter)",
+        "Arquitectura de software",
+        "Pruebas unitarias y de integración",
+        "Desarrollo de APIs RESTful",
+        "Integración de sistemas y servicios",
+        "Desarrollo de juegos",
+        "Machine Learning y Data Science",
+        "Cloud Computing (AWS, Azure, Google Cloud)",
+        "Automatización de tareas con scripting (Bash, PowerShell)",
+        "Virtualización y contenedores (Docker, Kubernetes)",
+        "Seguridad en aplicaciones web",
+        "Optimización de rendimiento web",
+        "Desarrollo de extensiones y plugins",
+        "Experiencia en frameworks y bibliotecas adicionales (Vue.js, Ruby on Rails, Spring, Express.js)"
+    ]
+  }
+  
