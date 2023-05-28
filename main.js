@@ -13,13 +13,19 @@ document.addEventListener('DOMContentLoaded', () => {
     initSportsList();
 });
 
-function initHeader() {
+async function initHeader() {
+    const response = await fetch('data.json');
+    const jsonData = await response.json();
+
+    const headerData = jsonData.header;
+    
     const headerTitle = document.getElementById('header-title');
     const headerDescription = document.getElementById('header-description');
 
-    headerTitle.textContent = '¡Bienvenido a mi mundo!';
-    headerDescription.textContent = '¡Hola! Soy Abraham, un apasionado explorador de distintas áreas del conocimiento y experiencias. A lo largo de mi vida, he jugado muchos roles: desde programador y escritor hasta neurocientífico y analista. Me encanta adentrarme en nuevas disciplinas y desafíos, ya sea en el campo de la metafísica, el deporte, la nutrición, o cualquier otro espacio donde pueda aprender y crecer. En esta página, compartiré contigo mis habilidades, proyectos, escritos y pensamientos. Espero que encuentres algo que te inspire, te informe o simplemente te haga pasar un buen rato. ¡Disfruta del recorrido!';
+    headerTitle.textContent = headerData.title;
+    headerDescription.textContent = headerData.description;
 }
+
 
 function initAboutMe() {
     const aboutMe = document.getElementById('about-me');
@@ -57,27 +63,11 @@ function createToggleButton(elementToToggle) {
     return toggleButton;
 }
 
-function initProjects() {
-    const projects = [
-        {
-            title: 'True Wireless Earbuds',
-            description: '¡Bienvenidos al emocionante mundo de los audífonos inalámbricos! Aquí encontrarás el mejor proyecto de ventas, ofreciendo lo último en tecnología y calidad de sonido. ¡Sumérgete en la libertad de la música sin cables con nosotros!',
-            image: 'project1.png',
-            link: 'https://truewirelessearbuds.netlify.app/'
-        },
-        {
-            title: 'Proyecto 2',
-            description: 'Descripción breve del proyecto 2.',
-            image: 'project.png',
-            link: '#'
-        },
-        {
-            title: 'Proyecto 3',
-            description: 'Descripción breve del proyecto 3.',
-            image: 'project.png',
-            link: '#'
-        }
-    ];
+async function initProjects() {
+    const response = await fetch('data.json');
+    const jsonData = await response.json();
+
+    const projects = jsonData.projects;
     const projectsList = document.getElementById('projects');
 
     projects.forEach(project => {
@@ -87,6 +77,7 @@ function initProjects() {
         projectsList.appendChild(projectItem);
     });
 }
+
 
 function createProjectContent(project) {
     return `
@@ -233,16 +224,25 @@ async function initFooter() {
     // Llenar el contenido de derechos de autor
     const currentYear = new Date().getFullYear();
     document.getElementById('copyright').textContent = `© ${currentYear} ${data.copyright}`;
+
+    // Cambiar el contenido de los mensajes de pie de página
+    document.getElementById('thanks-message').textContent = data.footer.thanksMessage;
+    document.getElementById('contact-message').textContent = data.footer.contactMessage;
 }
 
-function initMusicLinks() {
-    document.querySelector('#song1 a').href = 'https://www.youtube.com/watch?v=XFkzRNyygfk'; // URL de la canción 'Radiohead - Creep'
-    document.querySelector('#song2 a').href = 'https://www.youtube.com/watch?v=fV4DiAyExN0'; // URL de la canción 'The Reason - Hoobastank'
-    document.querySelector('#song3 a').href = 'https://www.youtube.com/watch?v=eBG7P-K-r1Y'; // URL de la canción 'Foo Fighters - Everlong'
-    document.querySelector('#song4 a').href = 'https://www.youtube.com/watch?v=r00ikilDxW4'; // URL de la canción '21 Guns - Green Day'
-    document.querySelector('#song5 a').href = 'https://www.youtube.com/watch?v=4qlCC1GOwFw'; // URL de la canción 'One Step Closer - Linkin Park'
-    document.querySelector('#song6 a').href = 'https://www.youtube.com/watch?v=rgNvZeZ0K6k'; // URL de la canción 'R. City - Locked Away ft. Adam Levine'
+
+async function initMusicLinks() {
+    const response = await fetch('data.json');
+    const jsonData = await response.json();
+
+    const musicLinks = jsonData.musicLinks;
+
+    for (let i = 1; i <= Object.keys(musicLinks).length; i++) {
+        document.querySelector(`#song${i} a`).href = musicLinks[`song${i}`];
+    }
 }
+
+
 
 function initExperienceEducation() {
     const experienceEducationList = document.getElementById('experience-education');

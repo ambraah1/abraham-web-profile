@@ -2,7 +2,7 @@
     "socialLinks": {
       "facebook": "https://www.facebook.com/ambraah1",
       "instagram": "https://www.instagram.com/ambraah1",
-      "youtube": "https://www.youtube.com/@ambraah1",
+      "youtube": "https://www.youtube.com/channel/UCb5wbR5NHUAjOy5l7A4-LOQ",
       "linkedin": "https://www.facebook.com/nuevoNombreDeUsuario",
       "github": "https://github.com/ambraah1",
       "twitter": "https://twitter.com/ambraah1",
@@ -41,6 +41,42 @@
         "Optimización de rendimiento web",
         "Desarrollo de extensiones y plugins",
         "Experiencia en frameworks y bibliotecas adicionales (Vue.js, Ruby on Rails, Spring, Express.js)"
-    ]
+    ],
+    "musicLinks": {
+        "song1": "https://www.youtube.com/watch?v=XFkzRNyygfk",
+        "song2": "https://www.youtube.com/watch?v=fV4DiAyExN0",
+        "song3": "https://www.youtube.com/watch?v=eBG7P-K-r1Y",
+        "song4": "https://www.youtube.com/watch?v=r00ikilDxW4",
+        "song5": "https://www.youtube.com/watch?v=4qlCC1GOwFw",
+        "song6": "https://www.youtube.com/watch?v=rgNvZeZ0K6k"
+    },
+    "projects": [
+        {
+            "title": "True Wireless Earbuds",
+            "description": "¡Bienvenidos al emocionante mundo de los audífonos inalámbricos! Aquí encontrarás el mejor proyecto de ventas, ofreciendo lo último en tecnología y calidad de sonido. ¡Sumérgete en la libertad de la música sin cables con nosotros!",
+            "image": "project1.png",
+            "link": "https://truewirelessearbuds.netlify.app/"
+        },
+        {
+            "title": "Proyecto 2",
+            "description": "Descripción breve del proyecto 2.",
+            "image": "project.png",
+            "link": "#"
+        },
+        {
+            "title": "Proyecto 3",
+            "description": "Descripción breve del proyecto 3.",
+            "image": "project.png",
+            "link": "#"
+        }
+    ],
+    "header": {
+        "title": "¡Bienvenido a mi mundo!",
+        "description": "¡Hola! Soy Abraham, un apasionado explorador de distintas áreas del conocimiento y experiencias. A lo largo de mi vida, he jugado muchos roles: desde programador y escritor hasta neurocientífico y analista. Me encanta adentrarme en nuevas disciplinas y desafíos, ya sea en el campo de la metafísica, el deporte, la nutrición, o cualquier otro espacio donde pueda aprender y crecer. En esta página, compartiré contigo mis habilidades, proyectos, escritos y pensamientos. Espero que encuentres algo que te inspire, te informe o simplemente te haga pasar un buen rato. ¡Disfruta del recorrido!"
+    },
+    "footer": {
+        "thanksMessage": "¡Gracias por visitar mi página personal!",
+        "contactMessage": "No dudes en contactarme si tienes alguna pregunta o deseas colaborar en algún proyecto. Estaré encantado de escuchar tus ideas y trabajar juntos."
+    }
   }
   
