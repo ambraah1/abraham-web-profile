@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initContactInfo();
     initContactForm();
     initFooter(); // Añade la llamada a la función aquí.
+    initMusicLinks(); // Añade la llamada a la función aquí.
 });
 
 function initHeader() {
@@ -257,4 +258,12 @@ function initFooter() {
     // Aquí es donde puedes cambiar el contenido de derechos de autor.
     const currentYear = new Date().getFullYear();
     document.getElementById('copyright').textContent = `© ${currentYear} Abraham. Todos los derechos reservados.`;
+}
+function initMusicLinks() {
+    document.querySelector('#song1 a').href = 'https://www.youtube.com/watch?v=XFkzRNyygfk'; // URL de la canción 'Radiohead - Creep'
+    document.querySelector('#song2 a').href = 'https://www.youtube.com/watch?v=fV4DiAyExN0'; // URL de la canción 'The Reason - Hoobastank'
+    document.querySelector('#song3 a').href = 'https://www.youtube.com/watch?v=eBG7P-K-r1Y'; // URL de la canción 'Foo Fighters - Everlong'
+    document.querySelector('#song4 a').href = 'https://www.youtube.com/watch?v=r00ikilDxW4'; // URL de la canción '21 Guns - Green Day'
+    document.querySelector('#song5 a').href = 'https://www.youtube.com/watch?v=4qlCC1GOwFw'; // URL de la canción 'One Step Closer - Linkin Park'
+    document.querySelector('#song6 a').href = 'https://www.youtube.com/watch?v=rgNvZeZ0K6k'; // URL de la canción 'R. City - Locked Away ft. Adam Levine'
 }
