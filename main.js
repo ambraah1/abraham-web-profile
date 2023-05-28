@@ -236,11 +236,26 @@ async function initMusicLinks() {
     const jsonData = await response.json();
 
     const musicLinks = jsonData.musicLinks;
-
-    for (let i = 1; i <= Object.keys(musicLinks).length; i++) {
-        document.querySelector(`#song${i} a`).href = musicLinks[`song${i}`];
+    const musicListElement = document.querySelector('#music-list');
+    
+    // Limpia cualquier contenido existente
+    while (musicListElement.firstChild) {
+        musicListElement.firstChild.remove();
     }
+
+    musicLinks.forEach(song => {
+        const listItem = document.createElement('li');
+        listItem.id = song.id;
+
+        const link = document.createElement('a');
+        link.href = song.url;
+        link.textContent = song.title;
+
+        listItem.appendChild(link);
+        musicListElement.appendChild(listItem);
+    });
 }
+
 
 
 
@@ -267,11 +282,10 @@ function initExperienceEducation() {
     });
 }
 
-function initWritingSkills() {
-    const writingSkills = [
-        'Creativa y técnica',
-        'Constantemente estoy desarrollando y mejorando mis habilidades de escritura. Almaceno en mi computadora varios tipos de escritura, incluyendo relatos sobre mi vida personal, que estarán disponibles en esta página en un futuro próximo. Manténganse al tanto para más actualizaciones.'
-    ];
+async function initWritingSkills() {
+    const data = await fetch('data.json');
+    const jsonData = await data.json();
+    const writingSkills = jsonData.writingSkills;
     const writingSkillsList = document.getElementById('writing-skills');
 
     writingSkills.forEach(skill => {
@@ -280,6 +294,7 @@ function initWritingSkills() {
         writingSkillsList.appendChild(skillItem);
     });
 }
+
 
 function initSportsList() {
     const sports = [

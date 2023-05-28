@@ -9,6 +9,10 @@
       "stackoverflow": "https://es.stackoverflow.com/users/323294/abraham-avenda%c3%b1o-v%c3%a9liz",
       "whatsapp": "https://wa.me/+56977143420" 
     },
+    "writingSkills": [
+        "Creativa y técnica",
+        "Constantemente estoy desarrollando y mejorando mis habilidades de escritura. Almaceno en mi computadora varios tipos de escritura, incluyendo relatos sobre mi vida personal, que estarán disponibles en esta página en un futuro próximo. Manténganse al tanto para más actualizaciones."
+    ],
     "copyright": "Abraham. Todos los derechos reservados.",
     "programmingSkills": [
         "Desarrollo web front-end",
@@ -42,14 +46,15 @@
         "Desarrollo de extensiones y plugins",
         "Experiencia en frameworks y bibliotecas adicionales (Vue.js, Ruby on Rails, Spring, Express.js)"
     ],
-    "musicLinks": {
-        "song1": "https://www.youtube.com/watch?v=XFkzRNyygfk",
-        "song2": "https://www.youtube.com/watch?v=fV4DiAyExN0",
-        "song3": "https://www.youtube.com/watch?v=eBG7P-K-r1Y",
-        "song4": "https://www.youtube.com/watch?v=r00ikilDxW4",
-        "song5": "https://www.youtube.com/watch?v=4qlCC1GOwFw",
-        "song6": "https://www.youtube.com/watch?v=rgNvZeZ0K6k"
-    },
+    "musicLinks": [
+        {"id": "song1", "title": "Radiohead - Creep", "url": "https://www.youtube.com/watch?v=XFkzRNyygfk"},
+        {"id": "song2", "title": "The Reason - Hoobastank", "url": "https://www.youtube.com/watch?v=fV4DiAyExN0"},
+        {"id": "song3", "title": "Foo Fighters - Everlong", "url": "https://www.youtube.com/watch?v=eBG7P-K-r1Y"},
+        {"id": "song4", "title": "21 Guns - Green Day", "url": "https://www.youtube.com/watch?v=r00ikilDxW4"},
+        {"id": "song5", "title": "One Step Closer - Linkin Park", "url": "https://www.youtube.com/watch?v=4qlCC1GOwFw"},
+        {"id": "song6", "title": "R. City - Locked Away ft. Adam Levine", "url": "https://www.youtube.com/watch?v=rgNvZeZ0K6k"}
+    ]
+    ,
     "projects": [
         {
             "title": "True Wireless Earbuds",
