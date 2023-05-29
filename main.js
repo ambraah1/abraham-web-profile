@@ -217,8 +217,21 @@ async function initFooter() {
     const data = await response.json();
 
     // Llenar los enlaces a las redes sociales
+    const socialMediaLinksDiv = document.getElementById('social-media-links');
     for (const [network, url] of Object.entries(data.socialLinks)) {
-        document.getElementById(`${network}-link`).href = url;
+        const aElement = document.createElement('a');
+        aElement.id = `${network}-link`;
+        aElement.href = url;
+        aElement.target = '_blank';
+        aElement.title = network.charAt(0).toUpperCase() + network.slice(1);
+
+        const iElement = document.createElement('i');
+        iElement.className = `fab fa-${network}`;
+
+        aElement.appendChild(iElement);
+        aElement.appendChild(document.createTextNode(` ${network.charAt(0).toUpperCase() + network.slice(1)}`));
+
+        socialMediaLinksDiv.appendChild(aElement);
     }
 
     // Llenar el contenido de derechos de autor
@@ -229,6 +242,7 @@ async function initFooter() {
     document.getElementById('thanks-message').textContent = data.footer.thanksMessage;
     document.getElementById('contact-message').textContent = data.footer.contactMessage;
 }
+
 
 
 async function initMusicLinks() {

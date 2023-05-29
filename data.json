@@ -9,6 +9,10 @@
       "stackoverflow": "https://es.stackoverflow.com/users/323294/abraham-avenda%c3%b1o-v%c3%a9liz",
       "whatsapp": "https://wa.me/+56977143420" 
     },
+    "footer": {
+        "thanksMessage": "¡Gracias por visitar mi página personal!",
+        "contactMessage": "No dudes en contactarme si tienes alguna pregunta o deseas colaborar en algún proyecto. Estaré encantado de escuchar tus ideas y trabajar juntos."
+    },
     "writingSkills": [
         "Creativa y técnica",
         "Constantemente estoy desarrollando y mejorando mis habilidades de escritura. Almaceno en mi computadora varios tipos de escritura, incluyendo relatos sobre mi vida personal, que estarán disponibles en esta página en un futuro próximo. Manténganse al tanto para más actualizaciones."
@@ -78,10 +82,6 @@
     "header": {
         "title": "¡Bienvenido a mi mundo!",
         "description": "¡Hola! Soy Abraham, un apasionado explorador de distintas áreas del conocimiento y experiencias. A lo largo de mi vida, he jugado muchos roles: desde programador y escritor hasta neurocientífico y analista. Me encanta adentrarme en nuevas disciplinas y desafíos, ya sea en el campo de la metafísica, el deporte, la nutrición, o cualquier otro espacio donde pueda aprender y crecer. En esta página, compartiré contigo mis habilidades, proyectos, escritos y pensamientos. Espero que encuentres algo que te inspire, te informe o simplemente te haga pasar un buen rato. ¡Disfruta del recorrido!"
-    },
-    "footer": {
-        "thanksMessage": "¡Gracias por visitar mi página personal!",
-        "contactMessage": "No dudes en contactarme si tienes alguna pregunta o deseas colaborar en algún proyecto. Estaré encantado de escuchar tus ideas y trabajar juntos."
     }
   }
   
