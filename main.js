@@ -97,23 +97,102 @@ window.onload = async function() {
 
   showSkills(shortSkills);
   
-    const writingSkillsList = document.querySelector('#writing-skills ul');
-    data.writingSkills.forEach(skill => {
-      const li = createListItem(skill);
-      writingSkillsList.appendChild(li);
-    });
+  const writingSkillsList = document.querySelector('#writing-skills ul');
+  const toggleWritingSkills = document.getElementById('toggle-writing-skills');
+  const fullWritingSkills = data.writingSkills[1]; // Obtiene el segundo elemento del arreglo
+  const shortWritingSkills = fullWritingSkills.substring(0, 100) + '...';
+  let isWritingExpanded = false;
+
+  writingSkillsList.innerHTML = `<li>${data.writingSkills[0]}</li>`;
+
+  toggleWritingSkills.addEventListener('click', function() {
+    if (!isWritingExpanded) {
+      writingSkillsList.innerHTML = `<li>${fullWritingSkills}</li>`;
+      toggleWritingSkills.innerText = 'Ver menos';
+      isWritingExpanded = true;
+    } else {
+      writingSkillsList.innerHTML = `<li>${shortWritingSkills}</li>`;
+      toggleWritingSkills.innerText = 'Ver más';
+      isWritingExpanded = false;
+    }
+  })
   
-    const projectsContainer = document.querySelector('#projects-container');
-    data.projects.forEach(project => {
+  const projectsContainer = document.querySelector('#projects-container');
+  const toggleProjects = document.getElementById('toggle-projects');
+  const fullProjects = data.projects;
+  const shortProjects = fullProjects.slice(0, 2);
+  let isProjectsExpanded = false;
+
+  function createProjectElement(project) {
+    const projectDiv = document.createElement('div');
+    projectDiv.innerHTML = `
+      <h3>${project.title}</h3>
+      <p>${project.description}</p>
+      <img src="${project.image}" alt="${project.title}" />
+      <a href="${project.link}" target="_blank">Ver proyecto</a>
+    `;
+    return projectDiv;
+  }
+
+  function showProjects(projects) {
+    projectsContainer.innerHTML = '';
+    projects.forEach(project => {
       const projectDiv = createProjectElement(project);
       projectsContainer.appendChild(projectDiv);
     });
+  }
+
+  toggleProjects.addEventListener('click', function() {
+    if (!isProjectsExpanded) {
+      showProjects(fullProjects);
+      toggleProjects.innerText = 'Ver menos';
+      isProjectsExpanded = true;
+    } else {
+      showProjects(shortProjects);
+      toggleProjects.innerText = 'Ver más';
+      isProjectsExpanded = false;
+    }
+  });
+
+  showProjects(shortProjects);
   
-    const musicLinksList = document.querySelector('#music-links ul');
-    data.musicLinks.forEach(musicLink => {
-      const li = createMusicLinkElement(musicLink);
+  const musicLinksList = document.querySelector('#music-links ul');
+  const toggleMusicLinks = document.getElementById('toggle-music-links');
+  const fullMusicLinks = data.musicLinks;
+  const shortMusicLinks = fullMusicLinks.slice(0, 2);
+  let isMusicExpanded = false;
+
+  function createMusicLinkElement(musicLink) {
+    const li = document.createElement('li');
+    const a = document.createElement('a');
+    a.href = musicLink.url;
+    a.target = '_blank';
+    a.innerText = musicLink.title;
+    li.appendChild(a);
+    return li;
+  }
+
+  function showMusicLinks(links) {
+    musicLinksList.innerHTML = '';
+    links.forEach(link => {
+      const li = createMusicLinkElement(link);
       musicLinksList.appendChild(li);
     });
+  }
+
+  toggleMusicLinks.addEventListener('click', function() {
+    if (!isMusicExpanded) {
+      showMusicLinks(fullMusicLinks);
+      toggleMusicLinks.innerText = 'Ver menos';
+      isMusicExpanded = true;
+    } else {
+      showMusicLinks(shortMusicLinks);
+      toggleMusicLinks.innerText = 'Ver más';
+      isMusicExpanded = false;
+    }
+  });
+
+  showMusicLinks(shortMusicLinks);
   
     document.getElementById('thanks-message').innerText = data.footer.thanksMessage;
     document.getElementById('contact-message').innerText = data.footer.contactMessage;
