@@ -41,14 +41,61 @@ window.onload = async function() {
   function loadPageData(data) {
     const headerTitle = document.getElementById('header-title');
     const headerDescription = document.getElementById('header-description');
+    const toggleDescription = document.getElementById('toggle-description');
+  
     headerTitle.innerText = data.header.title;
-    headerDescription.innerText = data.header.description;
+  
+    // Define las versiones completa y abreviada de la descripción
+    const fullDescription = data.header.description;
+    const shortDescription = fullDescription.substring(0, 100) + '...';
+    
+    // Mostrar la descripción abreviada inicialmente
+    headerDescription.innerText = shortDescription;
+  
+    // Alternar entre la descripción completa y la abreviada al hacer clic en el enlace
+    toggleDescription.addEventListener('click', function() {
+      if (headerDescription.innerText === shortDescription) {
+        headerDescription.innerText = fullDescription;
+        toggleDescription.innerText = 'Ver menos';
+      } else {
+        headerDescription.innerText = shortDescription;
+        toggleDescription.innerText = 'Ver más';
+      }
+    });
   
     const programmingSkillsList = document.querySelector('#programming-skills ul');
-    data.programmingSkills.forEach(skill => {
+  const toggleSkills = document.getElementById('toggle-skills');
+  const fullSkills = data.programmingSkills;
+  const shortSkills = fullSkills.slice(0, 5);
+  let isExpanded = false;
+
+  function createListItem(skill) {
+    const li = document.createElement('li');
+    li.innerText = skill;
+    return li;
+  }
+
+  function showSkills(skills) {
+    programmingSkillsList.innerHTML = '';
+    skills.forEach(skill => {
       const li = createListItem(skill);
       programmingSkillsList.appendChild(li);
     });
+  }
+
+  toggleSkills.addEventListener('click', function() {
+    if (!isExpanded) {
+      showSkills(fullSkills);
+      toggleSkills.innerText = 'Ver menos';
+      isExpanded = true;
+    } else {
+      showSkills(shortSkills);
+      toggleSkills.innerText = 'Ver más';
+      isExpanded = false;
+    }
+  });
+
+  showSkills(shortSkills);
   
     const writingSkillsList = document.querySelector('#writing-skills ul');
     data.writingSkills.forEach(skill => {
